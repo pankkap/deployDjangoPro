@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}" />
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <title>{{title}}</title>
+    <style>
+      .navbar-toggler-icon {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="/">CRUD Project</a>
+        <button
+          class="navbar-toggler bg-light"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active text-light" aria-current="page" href="/"
+              >Dashboard</a
+            >
+            <a class="nav-link text-light" href="/about">About</a>
+            <a class="nav-link text-light" href="/contact">Contact</a>
+          </div>
+        </div>
+        <span class="text-light"> Hello, {{request.user}} </span>
+        <span
+          ><a href="{% url 'logout' %}" class="btn btn-secondary btn-sm mx-3"
+            >Logout</a
+          ></span
+        >
+      </div>
+    </nav>
+  </body>
+</html>
